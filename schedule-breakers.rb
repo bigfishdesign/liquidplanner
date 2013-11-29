@@ -3,7 +3,7 @@ require_relative 'config.rb'
 require 'chronic'
 require 'active_support/all'
 
-context = ARGV[0] == 'last' ? 'yesterday' : 'tomorrow'
+context = ARGV[0] == 'last' ? 'last monday' : 'tomorrow'
 
 monday = Chronic.parse('last monday, 11am', now: Chronic.parse(context))
 week_package = "W/C #{monday.day.ordinalize} #{monday.strftime('%B')}"
